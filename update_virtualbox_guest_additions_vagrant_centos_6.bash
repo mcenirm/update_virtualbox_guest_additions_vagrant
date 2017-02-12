@@ -72,3 +72,6 @@ fi
 ( set -x ; vagrant scp "$scripts/update_virtualbox_guest_additions_centos_6.bash" default:/tmp/update_virtualbox_guest_additions_centos_6.bash )
 
 ( set -x ; vagrant ssh -c 'bash /tmp/update_virtualbox_guest_additions_centos_6.bash /tmp/VBoxGuestAdditions.iso' )
+
+echo
+echo Rerun this command with: "$0" "$work"
