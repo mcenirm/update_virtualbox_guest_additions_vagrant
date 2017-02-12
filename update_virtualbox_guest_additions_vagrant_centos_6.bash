@@ -58,8 +58,7 @@ INFO $"uuid:" "$uuid"
 
 if vagrant ssh -c '[ -d /vagrant/.vagrant ]' default ; then
   INFO $"Shared folder is working. Attempting `updateguestadditions`."
-  ( set -x ; VBoxManage guestcontrol $uuid updateguestadditions )
-  exit $?
+  ( set -x ; VBoxManage guestcontrol $uuid updateguestadditions ) && exit
 fi
 
 if ! vagrant ssh -c '[ -f /tmp/VBoxGuestAdditions.iso ]' default ; then
